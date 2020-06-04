@@ -1,8 +1,32 @@
 #!/bin/bash
 
 # Reduce CentOS 6,7,8 disk space used
-# https://www.getpagespeed.com/server-setup/clear-disk-space-centos
-# https://github.com/dvershinin/diskspace
+
+# Detect Linux distro/version
+
+CentOS 7
+cat /proc/version
+(strings showing centos.org and Red Hat)
+uname -a
+(string has .el7.)
+cat /etc/issue
+(no info)
+
+
+    CentOS          ->  /etc/centos-release, /etc/os-release, /etc/redhat-release, /etc/system-release
+    Debian (old)    ->  /etc/debian_release, /etc/debian_version
+    Debian (new)    ->  /etc/os-release
+    Fedora          ->  /etc/fedora-release
+    Gentoo          ->  /etc/gentoo-release
+    Mandrake        ->  /etc/mandrake-release
+    Novell SuSE     ->  /etc/SuSE-release
+    Red Hat         ->  /etc/redhat-release, /etc/redhat_version
+    Slackware       ->  /etc/slackware-release, /etc/slackware-version
+    Solaris/Sparc   ->  /etc/release
+    Sun JDS         ->  /etc/sun-release
+    Ubuntu          ->  /etc/lsb-release, /etc/os-release
+    Yellow dog      ->  /etc/yellowdog-release
+
 
 if rpm -q yum-utils > /dev/null; then
   echo "yum-utils already installed."
